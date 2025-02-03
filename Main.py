@@ -1,4 +1,5 @@
 ﻿import sys
+import json
 from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLineEdit, QPushButton, QListWidget, QListWidgetItem, QHBoxLayout, QLabel
 from PyQt6.QtCore import Qt, QPoint
 from PyQt6.QtGui import QMouseEvent
@@ -83,6 +84,8 @@ class ToDoApp(QWidget):
         
         self.setLayout(self.layout)
         self.setStyleSheet(self.get_styles())
+        
+        self.load_tasks()  # Load tasks when the app starts
     
     def add_task(self):
         task_text = self.task_input.text().strip()
@@ -92,12 +95,14 @@ class ToDoApp(QWidget):
             item.setFont(self.bold_font())
             self.task_list.addItem(item)
             self.task_input.clear()
+            self.save_tasks()  # Save tasks every time a new one is added
     
     def delete_task(self):
         for i in range(self.task_list.count() - 1, -1, -1):
             item = self.task_list.item(i)
             if item.checkState() == Qt.CheckState.Checked:
                 self.task_list.takeItem(i)
+        self.save_tasks()  # Save tasks after deletion
     
     def get_styles(self):
         return """
@@ -131,6 +136,27 @@ class ToDoApp(QWidget):
         font = self.font()
         font.setBold(True)
         return font
+    
+    def save_tasks(self):
+        tasks = []
+        for i in range(self.task_list.count()):
+            item = self.task_list.item(i)
+            tasks.append({"text": item.text(), "completed": item.checkState() == Qt.CheckState.Checked})
+        
+        with open("tasks.json", "w") as file:
+            json.dump(tasks, file)
+    
+    def load_tasks(self):
+        try:
+            with open("tasks.json", "r") as file:
+                tasks = json.load(file)
+                for task in tasks:
+                    item = QListWidgetItem(task["text"])
+                    item.setCheckState(Qt.CheckState.Checked if task["completed"] else Qt.CheckState.Unchecked)
+                    item.setFont(self.bold_font())
+                    self.task_list.addItem(item)
+        except FileNotFoundError:
+            pass  # No tasks to load if the file doesn't exist
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
