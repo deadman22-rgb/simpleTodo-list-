@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Todo_list_by_chitrang</class>
+ <widget class="QMainWindow" name="Todo_list_by_chitrang">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>366</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Todo List by Chitrang</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>366</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuToDo">
+    <property name="title">
+     <string>ToDo</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuCompleted_Task">
+    <property name="title">
+     <string>Completed Task</string>
+    </property>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuToDo"/>
+   <addaction name="menuCompleted_Task"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
