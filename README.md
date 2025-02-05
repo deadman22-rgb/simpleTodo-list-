@@ -36,8 +36,10 @@ This creates an `.exe` inside `dist/`
 (btw i also added an exe build in the root)
 ## 🎯 Future Improvements (Maybe?)  
 - Add some smooth **animations** (if they stop breaking stuff).  
-- Make a **mobile version** ( currently what i am working on, helps me learn electron).  
+- Make a **mobile version** ( currently what i am working on, helps me learn electron).
+- https://github.com/deadman22-rgb/ElectronBasedToDoList electron based version's repo 
 
 ---
 Made with **Python + PyQt6**, and a bit of rage when animations misbehaved. 
+
 
