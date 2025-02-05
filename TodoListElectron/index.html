@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="title-bar">
+        <span>To-Do List</span>
+        <div class="window-controls">
+            <button id="minimize">—</button>
+            <button id="close">✕</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <input id="taskInput" type="text" placeholder="Enter a task..." />
+        <button id="addTaskBtn">Add Task</button>
+        <ul id="taskList"></ul>
+        <button id="deleteCompletedBtn">Delete Completed Tasks</button>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
+    

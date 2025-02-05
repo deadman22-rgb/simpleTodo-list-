@@ -1,0 +1,123 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #1e1e2e, #121212);
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #2b2b3d;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+    background: #333;
+    color: white;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #3b82f6;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+    button:hover {
+        background-color: #2563eb;
+    }
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+li {
+    background: #444;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+    li.completed {
+        opacity: 0.6;
+        text-decoration: line-through;
+        color: #95a5a6;
+        background: #333;
+    }
+
+#deleteCompletedBtn {
+    margin-top: 15px;
+    width: 100%;
+    background-color: #ff4c4c;
+}
+
+    #deleteCompletedBtn:hover {
+        background-color: #ff1a1a;
+    }
+
+.title-bar {
+    width: 400px;
+    height: 30px;
+    background: #2b2b3d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    user-select: none;
+    -webkit-app-region: drag; /* Allows dragging */
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.window-controls {
+    display: flex;
+    gap: 5px;
+}
+
+    .window-controls button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+        padding: 3px 6px;
+        border-radius: 5px;
+    }
+
+        .window-controls button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
